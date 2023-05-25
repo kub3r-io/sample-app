@@ -1,0 +1,7 @@
+# for more info visit https://cto.ai/docs
+version: "1"
+commands:
+  - name: build-dev-pipeline-build:0.1.0
+    description: example build step
+    run: bash /ops/main.sh
+    sdk: 2

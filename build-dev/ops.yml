@@ -1,0 +1,6 @@
+# for more info visit https://cto.ai/docs
+version: "1"
+commands:
+  - name: build-dev:0.1.0
+    description: Command to perform build environment
+    run: python3 /ops/main.py

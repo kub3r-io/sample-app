@@ -1,0 +1,27 @@
+version: "1"
+pipelines:
+  - name: build-dev-pipeline:0.1.0
+    description: Pipeline to build the source code into dev environment.
+    env:
+      static:
+        - DOCKER_REGISTRY=ghcr.io
+        - GITHUB_ORG=my-org-name
+        - GITHUB_REPO=my-repo
+      secrets:
+        - DOCKER_REGISTRY_USER
+        - DOCKER_REGISTRY_PASS
+    jobs:
+      - name: build-dev-pipeline-build
+        description: example build step
+        packages:
+          - git
+        steps:
+          #- echo $DOCKER_REGISTRY_PASS | docker login -u $DOCKER_REGISTRY_USER
+          #  --password-stdin $DOCKER_REGISTRY
+          #- git clone https://github.com/$GITHUB_ORG/$GITHUB_REPO && cd
+          #  $GITHUB_REPO
+          - | 
+            echo "your GitHub repository has been successfully cloned."
+            echo "your image has been pushed to the registry!"
+          #- docker build -t $DOCKER_REGISTRY/$GITHUB_ORG/$GITHUB_REPO:latest .
+          #- docker push $DOCKER_REGISTRY/$GITHUB_ORG/$GITHUB_REPO:latest

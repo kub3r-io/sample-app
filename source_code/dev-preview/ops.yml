@@ -1,0 +1,8 @@
+# for more info visit https://cto.ai/docs
+version: "1"
+services:
+  - name: dev-preview:0.1.0
+    description: Preview for the dev environment after deployment.
+    run: python3 /ops/main.py
+    port: [ '8080:8080' ]
+    domain: ""
